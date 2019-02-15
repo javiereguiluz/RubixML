@@ -30,223 +30,223 @@ $ composer require rubix/ml
 ### Table of Contents
 
 - [Basic Introduction](#basic-introduction)
-	- [Obtaining Data](#obtaining-data)
-	- [Choosing an Estimator](#choosing-an-estimator)
-	- [Training and Prediction](#training-and-prediction)
-	- [Evaluation](#evaluating-model-performance)
-	- [Visualization](#visualization)
+    - [Obtaining Data](#obtaining-data)
+    - [Choosing an Estimator](#choosing-an-estimator)
+    - [Training and Prediction](#training-and-prediction)
+    - [Evaluation](#evaluating-model-performance)
+    - [Visualization](#visualization)
     - [Next Steps](#next-steps)
 - [System Architecture](#system-architecture)
 - Tutorials & Examples
-	- [Color Blob Clusterer](https://github.com/RubixML/Colors)
-	- [Credit Card Default Predictor](https://github.com/RubixML/Credit)
-	- [Human Activity Recognizer](https://github.com/RubixML/HAR)
-	- [Housing Price Predictor](https://github.com/RubixML/Housing)
-	- [Text Sentiment Analyzer](https://github.com/RubixML/Sentiment)
+    - [Color Blob Clusterer](https://github.com/RubixML/Colors)
+    - [Credit Card Default Predictor](https://github.com/RubixML/Credit)
+    - [Human Activity Recognizer](https://github.com/RubixML/HAR)
+    - [Housing Price Predictor](https://github.com/RubixML/Housing)
+    - [Text Sentiment Analyzer](https://github.com/RubixML/Sentiment)
 - [API Reference](#api-reference)
-	- [Dataset Objects](#dataset-objects)
-		- [Labeled](#labeled)
-		- [Unlabeled](#unlabeled)
-	- [Meta-Estimators](#meta-estimators)
-		- [Bootstrap Aggregator](#bootstrap-aggregator)
-		- [Grid Search](#grid-search)
-		- [Model Orchestra](#model-orchestra)
-		- [Persistent Model](#persistent-model)
-		- [Pipeline](#pipeline)
-	- [Estimators](#estimators)
-		- [Anomaly Detectors](#anomaly-detectors)
-			- [Isolation Forest](#isolation-forest)
-			- [Local Outlier Factor](#local-outlier-factor)
-			- [One Class SVM](#one-class-svm)
-			- [Robust Z Score](#robust-z-score)
-		- [Classifiers](#classifiers)
-			- [AdaBoost](#adaboost)
-			- [Classification Tree](#classification-tree)
-			- [Committee Machine](#committee-machine)
-			- [Dummy Classifier](#dummy-classifier)
-			- [Extra Tree Classifier](#extra-tree-classifier)
-			- [Gaussian Naive Bayes](#gaussian-naive-bayes)
-			- [K-d Neighbors](#k-d-neighbors)
-			- [K Nearest Neighbors](#k-nearest-neighbors)
-			- [Logistic Regression](#logistic-regression)
-			- [Multi Layer Perceptron](#multi-layer-perceptron)
-			- [Naive Bayes](#naive-bayes)
-			- [Random Forest](#random-forest)
-			- [Softmax Classifier](#softmax-classifier)
-			- [SVC](#svc)
-		- [Clusterers](#clusterers)
-			- [DBSCAN](#dbscan)
-			- [Fuzzy C Means](#fuzzy-c-means)
-			- [Gaussian Mixture](#gaussian-mixture)
-			- [K Means](#k-means)
-			- [Mean Shift](#mean-shift)
-		- [Embedders](#embedders)
-			- [t-SNE](#t-sne)
-		- [Regressors](#regressors)
-			- [Adaline](#adaline)
-			- [Dummy Regressor](#dummy-regressor)
-			- [Extra Tree Regressor](#extra-tree-regressor)
-			- [Gradient Boost](#gradient-boost)
-			- [K-d Neighbors Regressor](#k-d-neighbors-regressor)
-			- [KNN Regressor](#knn-regressor)
-			- [MLP Regressor](#mlp-regressor)
-			- [Regression Tree](#regression-tree)
-			- [Ridge](#ridge)
-			- [SVR](#svr)
-	- [Transformers](#transformers)
-		- [Dense Random Projector](#dense-random-projector)
-		- [Gaussian Random Projector](#gaussian-random-projector)
-		- [HTML Stripper](#html-stripper)
-		- [Image Vectorizer](#image-vectorizer)
-		- [Interval Discretizer](#interval-discretizer)
-		- [L1 Normalizer](#l1-normalizer)
-		- [L2 Normalizer](#l2-normalizer)
-		- [Lambda Function](#lambda-function)
-		- [Linear Discriminant Analysis](#linear-discriminant-analysis)
-		- [Max Absolute Scaler](#max-absolute-scaler)
-		- [Min Max Normalizer](#min-max-normalizer)
-		- [Missing Data Imputer](#missing-data-imputer)
-		- [Numeric String Converter](#numeric-string-converter)
-		- [One Hot Encoder](#one-hot-encoder)
-		- [Polynomial Expander](#polynomial-expander)
-		- [Principal Component Analysis](#principal-component-analysis)
-		- [Quartile Standardizer](#quartile-standardizer)
-		- [Robust Standardizer](#robust-standardizer)
-		- [Sparse Random Projector](#sparse-random-projector)
-		- [Stop Word Filter](#stop-word-filter)
-		- [Text Normalizer](#text-normalizer)
-		- [TF-IDF Transformer](#tf-idf-transformer)
-		- [Variance Threshold Filter](#variance-threshold-filter)
-		- [Word Count Vectorizer](#word-count-vectorizer)
-		- [Z Scale Standardizer](#z-scale-standardizer)
-	- [Neural Network](#neural-network)
-		- [Activation Functions](#activation-functions)
-			- [ELU](#elu)
-			- [Gaussian](#gaussian)
-			- [Hyperbolic Tangent](#hyperbolic-tangent)
-			- [ISRU](#isru)
-			- [Leaky ReLU](#leaky-relu)
-			- [ReLU](#relu)
-			- [SELU](#selu)
-			- [Sigmoid](#sigmoid)
-			- [Softmax](#softmax)
-			- [Soft Plus](#soft-plus)
-			- [Softsign](#softsign)
-			- [Thresholded ReLU](#thresholded-relu)
-		- [Cost Functions](#cost-functions)
-			- [Cross Entropy](#cross-entropy)
-			- [Exponential](#exponential)
-			- [Huber Loss](#huber-loss)
-			- [Least Squares](#least-squares)
-			- [Relative Entropy](#relative-entropy)
+    - [Dataset Objects](#dataset-objects)
+        - [Labeled](#labeled)
+        - [Unlabeled](#unlabeled)
+    - [Meta-Estimators](#meta-estimators)
+        - [Bootstrap Aggregator](#bootstrap-aggregator)
+        - [Grid Search](#grid-search)
+        - [Model Orchestra](#model-orchestra)
+        - [Persistent Model](#persistent-model)
+        - [Pipeline](#pipeline)
+    - [Estimators](#estimators)
+        - [Anomaly Detectors](#anomaly-detectors)
+            - [Isolation Forest](#isolation-forest)
+            - [Local Outlier Factor](#local-outlier-factor)
+            - [One Class SVM](#one-class-svm)
+            - [Robust Z Score](#robust-z-score)
+        - [Classifiers](#classifiers)
+            - [AdaBoost](#adaboost)
+            - [Classification Tree](#classification-tree)
+            - [Committee Machine](#committee-machine)
+            - [Dummy Classifier](#dummy-classifier)
+            - [Extra Tree Classifier](#extra-tree-classifier)
+            - [Gaussian Naive Bayes](#gaussian-naive-bayes)
+            - [K-d Neighbors](#k-d-neighbors)
+            - [K Nearest Neighbors](#k-nearest-neighbors)
+            - [Logistic Regression](#logistic-regression)
+            - [Multi Layer Perceptron](#multi-layer-perceptron)
+            - [Naive Bayes](#naive-bayes)
+            - [Random Forest](#random-forest)
+            - [Softmax Classifier](#softmax-classifier)
+            - [SVC](#svc)
+        - [Clusterers](#clusterers)
+            - [DBSCAN](#dbscan)
+            - [Fuzzy C Means](#fuzzy-c-means)
+            - [Gaussian Mixture](#gaussian-mixture)
+            - [K Means](#k-means)
+            - [Mean Shift](#mean-shift)
+        - [Embedders](#embedders)
+            - [t-SNE](#t-sne)
+        - [Regressors](#regressors)
+            - [Adaline](#adaline)
+            - [Dummy Regressor](#dummy-regressor)
+            - [Extra Tree Regressor](#extra-tree-regressor)
+            - [Gradient Boost](#gradient-boost)
+            - [K-d Neighbors Regressor](#k-d-neighbors-regressor)
+            - [KNN Regressor](#knn-regressor)
+            - [MLP Regressor](#mlp-regressor)
+            - [Regression Tree](#regression-tree)
+            - [Ridge](#ridge)
+            - [SVR](#svr)
+    - [Transformers](#transformers)
+        - [Dense Random Projector](#dense-random-projector)
+        - [Gaussian Random Projector](#gaussian-random-projector)
+        - [HTML Stripper](#html-stripper)
+        - [Image Vectorizer](#image-vectorizer)
+        - [Interval Discretizer](#interval-discretizer)
+        - [L1 Normalizer](#l1-normalizer)
+        - [L2 Normalizer](#l2-normalizer)
+        - [Lambda Function](#lambda-function)
+        - [Linear Discriminant Analysis](#linear-discriminant-analysis)
+        - [Max Absolute Scaler](#max-absolute-scaler)
+        - [Min Max Normalizer](#min-max-normalizer)
+        - [Missing Data Imputer](#missing-data-imputer)
+        - [Numeric String Converter](#numeric-string-converter)
+        - [One Hot Encoder](#one-hot-encoder)
+        - [Polynomial Expander](#polynomial-expander)
+        - [Principal Component Analysis](#principal-component-analysis)
+        - [Quartile Standardizer](#quartile-standardizer)
+        - [Robust Standardizer](#robust-standardizer)
+        - [Sparse Random Projector](#sparse-random-projector)
+        - [Stop Word Filter](#stop-word-filter)
+        - [Text Normalizer](#text-normalizer)
+        - [TF-IDF Transformer](#tf-idf-transformer)
+        - [Variance Threshold Filter](#variance-threshold-filter)
+        - [Word Count Vectorizer](#word-count-vectorizer)
+        - [Z Scale Standardizer](#z-scale-standardizer)
+    - [Neural Network](#neural-network)
+        - [Activation Functions](#activation-functions)
+            - [ELU](#elu)
+            - [Gaussian](#gaussian)
+            - [Hyperbolic Tangent](#hyperbolic-tangent)
+            - [ISRU](#isru)
+            - [Leaky ReLU](#leaky-relu)
+            - [ReLU](#relu)
+            - [SELU](#selu)
+            - [Sigmoid](#sigmoid)
+            - [Softmax](#softmax)
+            - [Soft Plus](#soft-plus)
+            - [Softsign](#softsign)
+            - [Thresholded ReLU](#thresholded-relu)
+        - [Cost Functions](#cost-functions)
+            - [Cross Entropy](#cross-entropy)
+            - [Exponential](#exponential)
+            - [Huber Loss](#huber-loss)
+            - [Least Squares](#least-squares)
+            - [Relative Entropy](#relative-entropy)
         - [Initializers](#initializers)
             - [He](#he)
             - [Le Cun](#le-cun)
             - [Normal](#normal)
-			- [Uniform](#uniform)
+            - [Uniform](#uniform)
             - [Xavier 1](#xavier-1)
             - [Xavier 2](#xavier-2)
-		- [Layers](#layers)
-			- [Input Layers](#input-layers)
-				- [Placeholder 1D](#placeholder-1d)
-			- [Hidden Layers](#hidden-layers)
+        - [Layers](#layers)
+            - [Input Layers](#input-layers)
+                - [Placeholder 1D](#placeholder-1d)
+            - [Hidden Layers](#hidden-layers)
                 - [Activation](#activation)
-				- [Alpha Dropout](#alpha-dropout)
-				- [Batch Norm](#batch-norm)
-				- [Dense](#dense)
-				- [Dropout](#dropout)
-				- [Noise](#noise)
+                - [Alpha Dropout](#alpha-dropout)
+                - [Batch Norm](#batch-norm)
+                - [Dense](#dense)
+                - [Dropout](#dropout)
+                - [Noise](#noise)
                 - [PReLU](#prelu)
-			- [Output Layers](#output-layers)
-				- [Binary](#Binary)
-				- [Continuous](#continuous)
-				- [Multiclass](#multiclass)
-		- [Optimizers](#optimizers)
-			- [AdaGrad](#adagrad)
-			- [Adam](#adam)
-			- [Cyclical](#cyclical)
-			- [Momentum](#momentum)
-			- [RMS Prop](#rms-prop)
-			- [Step Decay](#step-decay)
-			- [Stochastic](#stochastic)
-	- [Kernels](#kernels)
-		- [Distance](#distance)
-			- [Canberra](#canberra)
-			- [Cosine](#cosine)
-			- [Diagonal](#diagonal)
-			- [Euclidean](#euclidean)
-			- [Hamming](#hamming)
-			- [Jaccard](#jaccard)
-			- [Manhattan](#manhattan)
-			- [Minkowski](#minkowski)
-		- [SVM](#svm)
-			- [Linear](#linear)
-			- [Polynomial](#polynomial)
-			- [RBF](#rbf)
-			- [Sigmoidal](#sigmoidal)
-	- [Cross Validation](#cross-validation)
-		- [Validators](#validators)
-			- [Hold Out](#hold-out)
-			- [K Fold](#k-fold)
-			- [Leave P Out](#leave-p-out)
-			- [Monte Carlo](#monte-carlo)
-		- [Metrics](#validation-metrics)
-			- [Accuracy](#accuracy)
-			- [Completeness](#completeness)
-			- [F1 Score](#f1-score)
-			- [Homogeneity](#homogeneity)
-			- [Informedness](#informedness)
-			- [MCC](#mcc)
-			- [Mean Absolute Error](#mean-absolute-error)
-			- [Mean Squared Error](#mean-squared-error)
-			- [Median Absolute Error](#median-absolute-error)
-			- [RMS Error](#rms-error)
-			- [R Squared](#r-squared)
-			- [V Measure](#v-measure)
-		- [Reports](#reports)
-			- [Aggregate Report](#aggregate-report)
-			- [Confusion Matrix](#confusion-matrix)
-			- [Contingency Table](#contingency-table)
-			- [Multiclass Breakdown](#multiclass-breakdown)
-			- [Residual Analysis](#residual-analysis)
-	- [Generators](#generators)
-		- [Agglomerate](#agglomerate)
-		- [Blob](#blob)
-		- [Circle](#circle)
-		- [Half Moon](#half-moon)
-		- [Swiss Roll](#swiss-roll)
-	- [Other](#other)
-		- [Guessing Strategies](#guessing-strategies)
-			- [Blurry Percentile](#blurry-percentile)
-			- [Constant](#constant)
-			- [K Most Frequent](#k-most-frequent)
-			- [Lottery](#lottery)
-			- [Mean](#mean)
-			- [Popularity Contest](#popularity-contest)
-			- [Wild Guess](#wild-guess)
-		- [Helpers](#helpers)
-			- [Params](#params)
-		- [Loggers](#loggers)
-			- [Screen](#screen)
-		- [Persisters](#persisters)
-			- [Filesystem](#filesystem)
-			- [Redis DB](#redis-db)
-		- [Serializers](#serializers)
-			- [Binary](#binary-serializer)
-			- [Native](#native)
-		- [Tokenizers](#tokenizers)
-			- [N-Gram](#n-gram)
-			- [Skip-Gram](#skip-gram)
-			- [Whitespace](#whitespace)
-			- [Word](#word-tokenizer)
+            - [Output Layers](#output-layers)
+                - [Binary](#Binary)
+                - [Continuous](#continuous)
+                - [Multiclass](#multiclass)
+        - [Optimizers](#optimizers)
+            - [AdaGrad](#adagrad)
+            - [Adam](#adam)
+            - [Cyclical](#cyclical)
+            - [Momentum](#momentum)
+            - [RMS Prop](#rms-prop)
+            - [Step Decay](#step-decay)
+            - [Stochastic](#stochastic)
+    - [Kernels](#kernels)
+        - [Distance](#distance)
+            - [Canberra](#canberra)
+            - [Cosine](#cosine)
+            - [Diagonal](#diagonal)
+            - [Euclidean](#euclidean)
+            - [Hamming](#hamming)
+            - [Jaccard](#jaccard)
+            - [Manhattan](#manhattan)
+            - [Minkowski](#minkowski)
+        - [SVM](#svm)
+            - [Linear](#linear)
+            - [Polynomial](#polynomial)
+            - [RBF](#rbf)
+            - [Sigmoidal](#sigmoidal)
+    - [Cross Validation](#cross-validation)
+        - [Validators](#validators)
+            - [Hold Out](#hold-out)
+            - [K Fold](#k-fold)
+            - [Leave P Out](#leave-p-out)
+            - [Monte Carlo](#monte-carlo)
+        - [Metrics](#validation-metrics)
+            - [Accuracy](#accuracy)
+            - [Completeness](#completeness)
+            - [F1 Score](#f1-score)
+            - [Homogeneity](#homogeneity)
+            - [Informedness](#informedness)
+            - [MCC](#mcc)
+            - [Mean Absolute Error](#mean-absolute-error)
+            - [Mean Squared Error](#mean-squared-error)
+            - [Median Absolute Error](#median-absolute-error)
+            - [RMS Error](#rms-error)
+            - [R Squared](#r-squared)
+            - [V Measure](#v-measure)
+        - [Reports](#reports)
+            - [Aggregate Report](#aggregate-report)
+            - [Confusion Matrix](#confusion-matrix)
+            - [Contingency Table](#contingency-table)
+            - [Multiclass Breakdown](#multiclass-breakdown)
+            - [Residual Analysis](#residual-analysis)
+    - [Generators](#generators)
+        - [Agglomerate](#agglomerate)
+        - [Blob](#blob)
+        - [Circle](#circle)
+        - [Half Moon](#half-moon)
+        - [Swiss Roll](#swiss-roll)
+    - [Other](#other)
+        - [Guessing Strategies](#guessing-strategies)
+            - [Blurry Percentile](#blurry-percentile)
+            - [Constant](#constant)
+            - [K Most Frequent](#k-most-frequent)
+            - [Lottery](#lottery)
+            - [Mean](#mean)
+            - [Popularity Contest](#popularity-contest)
+            - [Wild Guess](#wild-guess)
+        - [Helpers](#helpers)
+            - [Params](#params)
+        - [Loggers](#loggers)
+            - [Screen](#screen)
+        - [Persisters](#persisters)
+            - [Filesystem](#filesystem)
+            - [Redis DB](#redis-db)
+        - [Serializers](#serializers)
+            - [Binary](#binary-serializer)
+            - [Native](#native)
+        - [Tokenizers](#tokenizers)
+            - [N-Gram](#n-gram)
+            - [Skip-Gram](#skip-gram)
+            - [Whitespace](#whitespace)
+            - [Word](#word-tokenizer)
 - [FAQ](#faq)
-	- [What environment should I run Rubix in?](#what-environment-should-i-run-rubix-in)
-	- [I'm getting out of memory errors](#im-getting-out-of-memory-errors)
+    - [What environment should I run Rubix in?](#what-environment-should-i-run-rubix-in)
+    - [I'm getting out of memory errors](#im-getting-out-of-memory-errors)
     - [What is a Tuple?](#what-is-a-tuple)
-	- [Does Rubix support multithreading?](#does-rubix-support-multithreading)
-	- [Does Rubix support Deep Learning?](#does-rubix-support-deep-learning)
-	- [What is the difference between categorical and continuous data types?](#what-is-the-difference-between-categorical-and-continuous-data-types)
-	- [Does Rubix support Reinforcement Learning?](#does-rubix-support-reinforcement-learning)
+    - [Does Rubix support multithreading?](#does-rubix-support-multithreading)
+    - [Does Rubix support Deep Learning?](#does-rubix-support-deep-learning)
+    - [What is the difference between categorical and continuous data types?](#what-is-the-difference-between-categorical-and-continuous-data-types)
+    - [Does Rubix support Reinforcement Learning?](#does-rubix-support-reinforcement-learning)
 - [Testing](#testing)
 - [Contributing](#contributing)
 
@@ -255,12 +255,12 @@ $ composer require rubix/ml
 Machine learning is the process by which a computer program is able to progressively improve performance on a certain task through training and data without explicitly being programmed. There are two types of machine learning that Rubix supports out of the box - *Supervised* and *Unsupervised*.
 
  - **Supervised** learning is a technique that uses a labeled dataset in which the outcome of each sample has been *labeled* by a human expert prior to training. There are two types of supervised learning to consider in Rubix:
-	 - **Classification** is the problem of identifying which *class* a particular sample belongs to. For example, one task may be in determining a particular species of flower or predicting someone's MBTI personality type.
-	 - **Regression** aims at predicting *continuous* values such as the sale price of a house or the position (in degrees) of the steering wheel of an automobile. The major difference between classification and regression is that, while there are a *finite* number of classes that a sample can belong to, there are *infinitely* many real (continuous) values that are possible to predict.
+     - **Classification** is the problem of identifying which *class* a particular sample belongs to. For example, one task may be in determining a particular species of flower or predicting someone's MBTI personality type.
+     - **Regression** aims at predicting *continuous* values such as the sale price of a house or the position (in degrees) of the steering wheel of an automobile. The major difference between classification and regression is that, while there are a *finite* number of classes that a sample can belong to, there are *infinitely* many real (continuous) values that are possible to predict.
 - **Unsupervised** learning by contrast does *not* use a labeled dataset. Instead, it focuses on finding patterns within the raw samples.
-	- **Clustering** is the grouping of data points in such a way that members of the same group are more similar (homogeneous) than the rest of the samples. You can think of clustering as assigning a class label to an otherwise unlabeled sample. An example where clustering is used is in differentiating PET scan tissues or segementing a customer base.
-	- **Anomaly Detection** is the process of flagging samples that do not conform to the expected pattern of the training data. Anomalous samples can indicate adversarial activity or exceptional circumstances such as fraud or a cyber attack.
-	- **Manifold Learning** is a dimensionality reduction method used in visualizing high dimensional datasets by producing a low (1 - 3) dimensional representation of the feature space.
+    - **Clustering** is the grouping of data points in such a way that members of the same group are more similar (homogeneous) than the rest of the samples. You can think of clustering as assigning a class label to an otherwise unlabeled sample. An example where clustering is used is in differentiating PET scan tissues or segmenting a customer base.
+    - **Anomaly Detection** is the process of flagging samples that do not conform to the expected pattern of the training data. Anomalous samples can indicate adversarial activity or exceptional circumstances such as fraud or a cyber attack.
+    - **Manifold Learning** is a dimensionality reduction method used in visualizing high dimensional datasets by producing a low (1 - 3) dimensional representation of the feature space.
 
 ### Obtaining Data
 Machine learning projects typically begin with a question. For example, you might want to answer the question "who of my friends are most likely to stay married to their spouse?" One way to go about answering this question with machine learning would be to go out and ask a bunch of happily married and divorced couples the same set of questions about their partner and then use that data to build a model of what a successful marriage looks like. Later, you can use that model to make predictions based on the answers you get from your friends. Specifically, the answers you collect are called *features* and they constitute measurements of some phenomena being observed. The number of features in a sample is called the *dimensionality* of the sample. For example, a sample with 20 features is said to be *20 dimensional*. The goal is to engineer enough of the right features for the learner to be able to train effectively.
@@ -362,11 +362,11 @@ var_dump($predictions);
 
 ```sh
 array(5) {
-	[0] => 'married'
-	[1] => 'divorced'
-	[2] => 'divorced'
-	[3] => 'divorced'
-	[4] => 'married'
+    [0] => 'married'
+    [1] => 'divorced'
+    [2] => 'divorced'
+    [3] => 'divorced'
+    [4] => 'married'
 }
 ```
 
@@ -579,7 +579,7 @@ public filterByColumn(int $index, callable $fn) : self
 #### Example:
 ```php
 $tallPeople = $dataset->filterByColumn(2, function ($value) {
-	return $value > 178.5;
+    return $value > 178.5;
 });
 ```
 
@@ -604,37 +604,37 @@ var_dump($dataset->samples());
 ```sh
 array(3) {
     [0]=> array(3) {
-	    [0]=> string(4) "mean"
-	    [1]=> string(4) "furry"
-	    [2]=> int(8)
+        [0]=> string(4) "mean"
+        [1]=> string(4) "furry"
+        [2]=> int(8)
     }
     [1]=> array(3) {
-	    [0]=> string(4) "nice"
-	    [1]=> string(4) "rough"
-	    [2]=> int(1)
+        [0]=> string(4) "nice"
+        [1]=> string(4) "rough"
+        [2]=> int(1)
     }
     [2]=> array(3) {
-	    [0]=> string(4) "nice"
-	    [1]=> string(4) "rough"
-	    [2]=> int(6)
+        [0]=> string(4) "nice"
+        [1]=> string(4) "rough"
+        [2]=> int(6)
     }
 }
 
 array(3) {
     [0]=> array(3) {
-	    [0]=> string(4) "nice"
-	    [1]=> string(4) "rough"
-	    [2]=> int(1)
+        [0]=> string(4) "nice"
+        [1]=> string(4) "rough"
+        [2]=> int(1)
     }
     [1]=> array(3) {
-	    [0]=> string(4) "nice"
-	    [1]=> string(4) "rough"
-	    [2]=> int(6)
+        [0]=> string(4) "nice"
+        [1]=> string(4) "rough"
+        [2]=> int(6)
     }
     [2]=> array(3) {
-	    [0]=> string(4) "mean"
-	    [1]=> string(4) "furry"
-	    [2]=> int(8)
+        [0]=> string(4) "mean"
+        [1]=> string(4) "furry"
+        [2]=> int(8)
     }
 }
 ```
@@ -729,7 +729,7 @@ The function is given a label as its only argument and should return the new lab
 
 ```php
 $dataset->transformLabels(function ($label) {
-	return $label === 1 ? 'female' : 'male';
+    return $label === 1 ? 'female' : 'male';
 });
 ```
 
@@ -776,16 +776,16 @@ $dataset = new Labeled($samples, $labels, true);  // Use the full constructor
 
 // Transform integer encoded labels to strings
 $dataset->transformLabels(function ($label) {
-	switch ($label) {
-		case 1:
-			return 'male';
-		
-		case 2:
-			return 'female';
+    switch ($label) {
+        case 1:
+            return 'male';
+        
+        case 2:
+            return 'female';
 
-		default:
-			return 'unknown';
-	}
+        default:
+            return 'unknown';
+    }
 });
 
 // Return all the labels in the dataset
@@ -814,8 +814,8 @@ array(4) {
 string(4) "male"
 
 array(2) {
-	[0]=> string(5) "female"
-	[1]=> string(4) "male"
+    [0]=> string(5) "female"
+    [1]=> string(4) "male"
 }
 ```
 
@@ -953,7 +953,7 @@ use Rubix\ML\CrossValidation\Metrics\F1Score;
 use Rubix\ML\CrossValidation\KFold;
 
 $grid = [
-	[1, 3, 5, 10], [new Euclidean(), new Manhattan()], [true, false],
+    [1, 3, 5, 10], [new Euclidean(), new Manhattan()], [true, false],
 ];
 
 $estimator = new GridSearch(KNearestNeightbors::class, $grid, new F1Score(), new KFold(10), true);
@@ -994,9 +994,9 @@ use Rubix\ML\Classifiers\ClassificationTree;
 use Rubix\ML\Classifiers\SoftmaxClassifier;
 
 $estimator = new ModelOrchestra([
-	new ClassificationTree(10, 3, 2),
-	new KNearestNeighbors(3, new Euclidean()),
-	new GaussianNB(),
+    new ClassificationTree(10, 3, 2),
+    new KNearestNeighbors(3, new Euclidean()),
+    new GaussianNB(),
 ], new SoftmaxClassifier(10), 0.8);
 ```
 
@@ -1070,10 +1070,10 @@ use Rubix\ML\Transformers\PrincipalComponentAnalysis;
 use Rubix\ML\Transformers\ZScaleStandardizer;
 
 $estimator = new Pipeline([
-	new MissingDataImputer('?'),
-	new OneHotEncoder(),
-	new PrincipalComponentAnalysis(20),
-	new ZScaleStandardizer(true),
+    new MissingDataImputer('?'),
+    new OneHotEncoder(),
+    new PrincipalComponentAnalysis(20),
+    new ZScaleStandardizer(true),
 ], new SoftmaxClassifier(128, new Adam(0.001)), true);
 ```
 
@@ -1148,14 +1148,14 @@ var_dump($probabilities);
 #### Output:
 ```sh
 array(2) {
-	[0] => array(2) {
-		['married'] => 0.975,
-		['divorced'] => 0.025,
-	}
-	[1] => array(2) {
-		['married'] => 0.200,
-		['divorced'] => 0.800,
-	}
+    [0] => array(2) {
+        ['married'] => 0.975,
+        ['divorced'] => 0.025,
+    }
+    [1] => array(2) {
+        ['married'] => 0.200,
+        ['divorced'] => 0.800,
+    }
 }
 ```
 
@@ -1386,11 +1386,11 @@ use Rubix\ML\NeuralNet\Optimizers\Adam;
 use Rubix\ML\Classifiers\KNearestNeighbors;
 
 $estimator = new CommitteeMachine([
-	new SoftmaxClassifier(100, new Adam(0.001)),
-	new RandomForest(new ClassificationTree(4), 100, 0.3),
-	new KNearestNeighbors(3),
+    new SoftmaxClassifier(100, new Adam(0.001)),
+    new RandomForest(new ClassificationTree(4), 100, 0.3),
+    new KNearestNeighbors(3),
 ], [
-	4, 6, 5, // Arbitrary influence values for each expert
+    4, 6, 5, // Arbitrary influence values for each expert
 ]);
 ```
 
@@ -1478,8 +1478,8 @@ public variances() : ?array
 use Rubix\ML\Classifiers\GaussianNB;
 
 $estimator = new GaussianNB([
-	'benign' => 0.9,
-	'malignant' => 0.1,
+    'benign' => 0.9,
+    'malignant' => 0.1,
 ]);
 ```
 
@@ -1623,14 +1623,14 @@ use Rubix\ML\NeuralNet\CostFunctions\CrossEntropy;
 use Rubix\ML\CrossValidation\Metrics\MCC;
 
 $estimator = new MultiLayerPerceptron([
-	new Dense(30),
-	new Activation(new LeakyReLU()),
-	new Dropout(0.3),
-	new Dense(20),
-	new Activation(new LeakyReLU()),
-	new Dropout(0.2),
-	new Dense(10),
-	new PReLU(0.25),
+    new Dense(30),
+    new Activation(new LeakyReLU()),
+    new Dropout(0.3),
+    new Dense(20),
+    new Activation(new LeakyReLU()),
+    new Dropout(0.2),
+    new Dense(10),
+    new PReLU(0.25),
 ], 100, new Adam(0.001), 1e-4, 1000, 1e-3, new CrossEntropy(), 0.1, new MCC(), 3);
 ```
 
@@ -1663,8 +1663,8 @@ public probabilities() : array
 use Rubix\ML\Classifiers\NaiveBayes;
 
 $estimator = new NaiveBayes(2.5, [
-	'spam' => 0.3,
-	'not spam' => 0.7,
+    'spam' => 0.3,
+    'not spam' => 0.7,
 ]);
 ```
 
@@ -2185,12 +2185,12 @@ use Rubix\ML\NeuralNet\Optimizers\RMSProp;
 use Rubix\ML\CrossValidation\Metrics\RSquared;
 
 $estimator = new MLPRegressor([
-	new Dense(50),
-	new Activation(new LeakyReLU(0.1)),
-	new Dense(50),
-	new Activation(new LeakyReLU(0.1)),
-	new Dense(50),
-	new Activation(new LeakyReLU(0.1)),
+    new Dense(50),
+    new Activation(new LeakyReLU(0.1)),
+    new Dense(50),
+    new Activation(new LeakyReLU(0.1)),
+    new Dense(50),
+    new Activation(new LeakyReLU(0.1)),
 ], 256, new RMSProp(0.001), 1e-3, 100, 1e-5, new LeastSquares(), 0.1, new RSquared(), 3);
 ```
 
@@ -2512,11 +2512,11 @@ This transformer does not have any additional methods.
 use Rubix\ML\Transformers\LambdaFunction;
 
 $transformer = new LambdaFunction(function ($samples, $labels) {
-	$samples = array_map(function ($sample) {
-		return [array_sum($sample)];
-	}, $samples);
+    $samples = array_map(function ($sample) {
+        return [array_sum($sample)];
+    }, $samples);
 
-	return [$samples, $labels];
+    return [$samples, $labels];
 });
 ```
 
@@ -3542,7 +3542,7 @@ $optimizer = new Adam(0.0001, 0.9, 0.999);
 ```
 
 ### Cyclical
-The Cyclical optimizer uses a global learning rate that cycles between the lower and upper bound over a designated period while also decaying the upper bound by a factor of gamma each step. Cyclical learning rates have been shown to help escape local minima and saddle points thus acheiving higher accuracy.
+The Cyclical optimizer uses a global learning rate that cycles between the lower and upper bound over a designated period while also decaying the upper bound by a factor of gamma each step. Cyclical learning rates have been shown to help escape local minima and saddle points thus achieving higher accuracy.
 
 #### Parameters:
 | # | Param | Default | Type | Description |
@@ -3784,7 +3784,7 @@ $kernel = new Polynomial(3, null, 0.);
 ```
 
 ### RBF
-Non linear radias basis function computes the distance from a centroid or origin.
+Non linear radial basis function computes the distance from a centroid or origin.
 
 #### Parameters:
 | # | Param | Default | Type | Description |
@@ -3993,7 +3993,7 @@ $metric = new F1Score();
 ```
 
 ### Homogeneity
-A ground truth clustering metric that measures the ratio of samples in a cluster that are also members of the same class. A cluster is said to be *homogenous* when the entire cluster is comprised of a single class of samples.
+A ground truth clustering metric that measures the ratio of samples in a cluster that are also members of the same class. A cluster is said to be *homogeneous* when the entire cluster is comprised of a single class of samples.
 
 ##### Compatibility: Clustering
 
@@ -4139,9 +4139,9 @@ use Rubix\ML\CrossValidation\Reports\MulticlassBreakdown;
 
 ...
 $report = new AggregateReport([
-	'breakdown' => new MulticlassBreakdown(),
-	'matrix1' => new ConfusionMatrix(['wolf', 'lamb']),
-	'matrix2' => new ConfusionMatrix(['human', 'gorilla']),
+    'breakdown' => new MulticlassBreakdown(),
+    'matrix1' => new ConfusionMatrix(['wolf', 'lamb']),
+    'matrix2' => new ConfusionMatrix(['human', 'gorilla']),
 ]);
 
 $result = $report->generate($estimator, $testing);
@@ -4262,26 +4262,26 @@ var_dump($result);
 ```sh
 ...
 ["label"]=> array(2) {
-	["wolf"]=> array(19) {
-      	["accuracy"]=> float(0.6)
-      	["precision"]=> float(0.66666666666667)
-      	["recall"]=> float(0.66666666666667)
-      	["specificity"]=> float(0.5)
-      	["negative_predictive_value"]=> float(0.5)
-      	["false_discovery_rate"]=> float(0.33333333333333)
-      	["miss_rate"]=> float(0.33333333333333)
-      	["fall_out"]=> float(0.5)
-      	["false_omission_rate"]=> float(0.5)
-     	["f1_score"]=> float(0.66666666666667)
-      	["mcc"]=> float(0.16666666666667)
-      	["informedness"]=> float(0.16666666666667)
-      	["markedness"]=> float(0.16666666666667)
-      	["true_positives"]=> int(2)
-      	["true_negatives"]=> int(1)
-      	["false_positives"]=> int(1)
-      	["false_negatives"]=> int(1)
-      	["cardinality"]=> int(3)
-      	["density"]=> float(0.6)
+    ["wolf"]=> array(19) {
+        ["accuracy"]=> float(0.6)
+        ["precision"]=> float(0.66666666666667)
+        ["recall"]=> float(0.66666666666667)
+        ["specificity"]=> float(0.5)
+        ["negative_predictive_value"]=> float(0.5)
+        ["false_discovery_rate"]=> float(0.33333333333333)
+        ["miss_rate"]=> float(0.33333333333333)
+        ["fall_out"]=> float(0.5)
+        ["false_omission_rate"]=> float(0.5)
+        ["f1_score"]=> float(0.66666666666667)
+        ["mcc"]=> float(0.16666666666667)
+        ["informedness"]=> float(0.16666666666667)
+        ["markedness"]=> float(0.16666666666667)
+        ["true_positives"]=> int(2)
+        ["true_negatives"]=> int(1)
+        ["false_positives"]=> int(1)
+        ["false_negatives"]=> int(1)
+        ["cardinality"]=> int(3)
+        ["density"]=> float(0.6)
     }
 ...
 ```
@@ -4313,8 +4313,8 @@ var_dump($result);
     ["median_absolute_error"]=> float(0.30273889978541)
     ["mean_squared_error"]=> float(0.44278193357447)
     ["rms_error"]=> float(0.66541861529001)
-	["mean_squared_log_error"]=> float(-0.35381010755)
-	["r_squared"]=> float(0.99393263320234)
+    ["mean_squared_log_error"]=> float(-0.35381010755)
+    ["r_squared"]=> float(0.99393263320234)
     ["error_mean"]=> float(0.14748941084881)
     ["error_variance"]=> float(0.42102880726195)
     ["error_skewness"]=> float(-2.7901397847317)
@@ -4401,11 +4401,11 @@ public weights() : array
 use Rubix\ML\Datasets\Generators\Agglomerate;
 
 $generator = new Agglomerate([
-	new Blob([5, 2], 1.0),
-	new HalfMoon([-3, 5], 1.5, 90.0, 0.1),
-	new Circle([2, -4], 2.0, 0.05),
+    new Blob([5, 2], 1.0),
+    new HalfMoon([-3, 5], 1.5, 90.0, 0.1),
+    new Circle([2, -4], 2.0, 0.05),
 ], [
-	5, 6, 3, // An arbitrary set of weights
+    5, 6, 3, // An arbitrary set of weights
 ]);
 ```
 
@@ -4714,7 +4714,7 @@ use Rubix\CrossValidation\Metrics\VMeasure;
 
 ...
 $params = [
-	Params::grid(1, 5, 5), Params::floats(1.0, 20.0, 20), [new Diagonal(), new Minkowski(3.0)],
+    Params::grid(1, 5, 5), Params::floats(1.0, 20.0, 20), [new Diagonal(), new Minkowski(3.0)],
 ];
 
 $estimator = new GridSearch(FuzzyCMeans::class, $params, new VMeasure(), new KFold(10));
@@ -4883,15 +4883,15 @@ var_dump($tokenizer->tokenize($text));
 ```sh
   array(10) {
     [0]=> string(5) "would"
-	[1]=> string(4) "like"
-	[2]=> string(2) "to"
-	[3]=> string(3) "die"
-	[4]=> string(2) "on"
-	[5]=> string(4) "Mars"
-	[6]=> string(4) "just"
-	[7]=> string(3) "not"
-	[8]=> string(2) "on"
-	[9]=> string(6) "impact"
+    [1]=> string(4) "like"
+    [2]=> string(2) "to"
+    [3]=> string(3) "die"
+    [4]=> string(2) "on"
+    [5]=> string(4) "Mars"
+    [6]=> string(4) "just"
+    [7]=> string(3) "not"
+    [8]=> string(2) "on"
+    [9]=> string(6) "impact"
   }
 ```
 
